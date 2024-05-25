@@ -5,8 +5,8 @@ import java.awt.event.KeyEvent;
 public class Screensaver extends javax.swing.JFrame implements Runnable{
 
     // tamanho da tela
-    private int height = 1000;
-    private int whidth = 1500;
+    private int height = 800;
+    private int width = 1000;
 
     // teclas
     /*
@@ -53,7 +53,7 @@ public class Screensaver extends javax.swing.JFrame implements Runnable{
         // Largura
         layout.setHorizontalGroup(
                 layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGap(0, whidth, Short.MAX_VALUE)
+                        .addGap(0, width, Short.MAX_VALUE)
         );
         // Altura
         layout.setVerticalGroup(
@@ -147,8 +147,11 @@ public class Screensaver extends javax.swing.JFrame implements Runnable{
         Graphics g = getBufferStrategy().getDrawGraphics();
 
         // Instancie suas formas geométricas aqui
-
-
+        // Shape s1 = new Shape();
+        // Shape s2 = new Shape(Color.BLUE,500,200,5,-2);
+        Rectangle r1 = new Rectangle();
+        Rectangle r2 = new Rectangle(200,200);
+        Rectangle r3 = new Rectangle(Color.BLACK,200,200,-2,-5,50,100);
 
         // Como num desenho animado, as animações são criadas a partir da sobreposição de frames
         while(true) {
@@ -159,6 +162,14 @@ public class Screensaver extends javax.swing.JFrame implements Runnable{
 
             // Implemente sua animação aqui.
 
+            r1.draw(g);
+            r1.move(width,height);
+
+            r2.draw(g);
+            r2.move(width,height);
+
+            r3.draw(g);
+            r3.move(width,height);
 
             // Exibe a tela
             getBufferStrategy().show();
